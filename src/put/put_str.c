@@ -6,7 +6,7 @@
 /*   By: kisik <kisik@student.42kocaeli.com.tr >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 19:22:31 by kisik             #+#    #+#             */
-/*   Updated: 2023/11/15 21:39:52 by kisik            ###   ########.tr       */
+/*   Updated: 2023/12/03 13:44:32 by kisik            ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	put_str(char *str)
 {
-	while (*str)
-		put_char(*str++);
+    while (*str != '\0')
+        put_char(*str++);
 }

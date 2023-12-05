@@ -1,32 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   put_base.c                                         :+:      :+:    :+:   */
+/*   int2base.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kisik <kisik@student.42kocaeli.com.tr >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/15 23:53:42 by kisik             #+#    #+#             */
-/*   Updated: 2023/12/03 17:05:43 by kisik            ###   ########.tr       */
+/*   Created: 2023/12/03 16:31:39 by kisik             #+#    #+#             */
+/*   Updated: 2023/12/03 16:38:39 by kisik            ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/lib42.h"
 
-void    put_base(int nb, int base)
+char	*int2base(int nb, int base)
 {
-    char *range;
+    char	*str;
+    int		i;
+    int		len;
+    char	*base_str;
 
-    range = "0123456789abcdefghijklmnopqrstuvwxyz";
+    base_str = "0123456789abcdef";
+    len = int_len(nb, base);
+    if (!(str = (char *)malloc(sizeof(char) * (len + 1))))
+        return (NULL);
+    str[len] = '\0';
     if (nb < 0)
     {
-        put_char('-');
-        nb = -nb;
+        str[0] = '-';
+        nb *= -1;
     }
-    if (nb >= base)
+    i = len - 1;
+    while (nb >= base)
     {
-        put_base(nb / base, base);
-        put_base(nb % base, base);
+        str[i] = base_str[nb % base];
+        nb /= base;
+        i--;
     }
-    else
-        put_char(range[nb]);
+    str[i] = base_str[nb % base];
+    return (str);
 }

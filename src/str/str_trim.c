@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_upper.c                                         :+:      :+:    :+:   */
+/*   str_trim.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kisik <kisik@student.42kocaeli.com.tr >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/13 02:14:11 by kisik             #+#    #+#             */
-/*   Updated: 2023/12/03 14:41:22 by kisik            ###   ########.tr       */
+/*   Created: 2023/12/02 01:46:44 by kisik             #+#    #+#             */
+/*   Updated: 2023/12/02 05:23:44 by kisik            ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int is_upper(char ch)
+#include "../../include/lib42.h"
+
+char *str_trim(char *str)
 {
-    if (ch >= 'A' && ch <= 'Z')
-        return (1);
-    return (0);
+    while(*str && is_space(*str))
+        str++;
+    return (str);        
 }

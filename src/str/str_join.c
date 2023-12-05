@@ -1,22 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   alloc.c                                          :+:      :+:    :+:   */
+/*   str_join.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kisik <kisik@student.42kocaeli.com.tr >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/16 08:09:53 by kisik             #+#    #+#             */
-/*   Updated: 2023/12/02 04:48:26 by kisik            ###   ########.tr       */
+/*   Created: 2023/12/03 23:12:01 by kisik             #+#    #+#             */
+/*   Updated: 2023/12/05 08:24:32 by kisik            ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/lib42.h"
 
-void *alloc(size_t size)
+char *str_join(char *str1, char *str2)
 {
-    void *ptr;
-    ptr = malloc(size);
-    if (!ptr)
-        return (NULL);
-    return (ptr);
+    char *str;
+    int i;
+    int j;
+    
+    i = 0;
+    j = 0;
+    str = (char *)malloc(sizeof(char) * (str_len(str1) + str_len(str2) + 1));
+    while(str1[i] != '\0')
+    {
+        str[i] = str1[i];
+        i++;
+    }
+    while(str2[j] != '\0')
+    {
+        str[i] = str2[j];
+        i++;
+        j++;
+    }
+    str[i] = '\0';
+    return (str);
 }

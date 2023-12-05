@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_upper.c                                         :+:      :+:    :+:   */
+/*   put_ptr_i.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kisik <kisik@student.42kocaeli.com.tr >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/13 02:14:11 by kisik             #+#    #+#             */
-/*   Updated: 2023/12/03 14:41:22 by kisik            ###   ########.tr       */
+/*   Created: 2023/12/03 14:19:41 by kisik             #+#    #+#             */
+/*   Updated: 2023/12/03 17:05:12 by kisik            ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int is_upper(char ch)
+#include "../../include/lib42.h"
+
+int	put_ptr_i(void *ptr)
 {
-    if (ch >= 'A' && ch <= 'Z')
-        return (1);
-    return (0);
+    int i;
+    i = 0;
+    i += put_str_i("0x");
+    i += put_str_i(int2hex((unsigned long)ptr));
+    return (i);
 }

@@ -6,19 +6,18 @@
 /*   By: kisik <kisik@student.42kocaeli.com.tr >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 02:43:05 by kisik             #+#    #+#             */
-/*   Updated: 2023/11/16 08:40:34 by kisik            ###   ########.tr       */
+/*   Updated: 2023/12/03 21:04:08 by kisik            ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void    *str_to_upper(char *str)
-{
-    int i;
+#include "../../include/lib42.h"
 
-    i = 0;
-    while (str[i])
+char    *str_to_upper(char *str)
+{
+    int i = 0;
+    while (str[i]) 
     {
-        if (str[i] >= 'a' && str[i] <= 'z')
-            str[i] -= 32;
+        str[i] = to_upper(str[i]);
         i++;
     }
     return (str);

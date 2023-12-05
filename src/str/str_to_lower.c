@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   to_lower_str.c                                     :+:      :+:    :+:   */
+/*   str_to_lower.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kisik <kisik@student.42kocaeli.com.tr >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 02:42:41 by kisik             #+#    #+#             */
-/*   Updated: 2023/11/16 08:40:05 by kisik            ###   ########.tr       */
+/*   Updated: 2023/12/03 21:02:59 by kisik            ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char   *str_to_lower(char *str)
-{
-    int i;
+#include "../../include/lib42.h"
 
-    i = 0;
-    while (str[i])
+char *str_to_lower(char *str)
+{
+    int i = 0;
+    while (str[i]) 
     {
-        if (str[i] >= 'A' && str[i] <= 'Z')
-            str[i] += 32;
+        str[i] = to_lower(str[i]);
         i++;
     }
     return (str);

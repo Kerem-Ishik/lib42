@@ -6,11 +6,11 @@
 /*   By: kisik <kisik@student.42kocaeli.com.tr >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 02:04:53 by kisik             #+#    #+#             */
-/*   Updated: 2023/11/15 20:23:11 by kisik            ###   ########.tr       */
+/*   Updated: 2023/12/05 08:03:05 by kisik            ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	str_len(char *str)
+int	str_len(const char *str)
 {
 	int	i;
 

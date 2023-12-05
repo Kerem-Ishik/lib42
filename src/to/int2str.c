@@ -1,18 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_upper.c                                         :+:      :+:    :+:   */
+/*   int_to_str.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kisik <kisik@student.42kocaeli.com.tr >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/13 02:14:11 by kisik             #+#    #+#             */
-/*   Updated: 2023/12/03 14:41:22 by kisik            ###   ########.tr       */
+/*   Created: 2023/11/16 08:47:37 by kisik             #+#    #+#             */
+/*   Updated: 2023/12/03 00:38:30 by kisik            ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int is_upper(char ch)
+#include "../../include/lib42.h"
+
+char	*int2str(int num)
 {
-    if (ch >= 'A' && ch <= 'Z')
-        return (1);
-    return (0);
+    int		i;
+    int		j;
+    char	*str;
+
+    i = 0;
+    j = num;
+    while (j > 0)
+    {
+        j /= 10;
+        i++;
+    }
+    str = (char *)alloc(sizeof(char) * (i + 1));
+    str[i] = 0;
+    while (i > 0)
+    {
+        str[--i] = num % 10 + '0';
+        num /= 10;
+    }
+    return (str);
 }

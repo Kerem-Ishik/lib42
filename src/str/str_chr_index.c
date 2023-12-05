@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_upper.c                                         :+:      :+:    :+:   */
+/*   str_chr_index.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kisik <kisik@student.42kocaeli.com.tr >    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/13 02:14:11 by kisik             #+#    #+#             */
-/*   Updated: 2023/12/03 14:41:22 by kisik            ###   ########.tr       */
+/*   Created: 2023/12/02 03:48:03 by kisik             #+#    #+#             */
+/*   Updated: 2023/12/02 16:00:35 by kisik            ###   ########.tr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int is_upper(char ch)
+#include "../../include/lib42.h"
+
+int str_chr_index(char *str, char ch)
 {
-    if (ch >= 'A' && ch <= 'Z')
-        return (1);
-    return (0);
+    int i;
+
+    i = 0;
+    while (str[i])
+    {
+        if (str[i] == ch)
+            return (i);
+        i++;
+    }
+    return (-1);
 }
